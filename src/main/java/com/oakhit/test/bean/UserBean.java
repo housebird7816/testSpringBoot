@@ -16,7 +16,6 @@ public class UserBean extends BaseBean {
     private String nickName;
 
     public UserBean() {
-        super();
     }
 
     public UserBean(String userName, String passWord, UserSexEnum userSex) {

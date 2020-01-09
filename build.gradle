@@ -19,6 +19,7 @@ configurations {
 }
 
 repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     mavenCentral()
 }
 
@@ -43,6 +44,20 @@ dependencies {
 
     //Gson
     implementation 'com.google.code.gson:gson:2.8.6'
+    //MQ
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
+    // schedule
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+    // mail
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    // web page mode
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    // devtools
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    // FastDFS
+//    implementation 'org.csource:fastdfs-client-java:1.29-SNAPSHOT'
+    compile fileTree(dir: 'libs', include: [ '*.jar'])
+
 }
 
 test {

@@ -3,22 +3,25 @@ package com.oakhit.test.control;
 import com.oakhit.test.bean.UserBean;
 import com.oakhit.test.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/usersql/")
+@ResponseBody
 public class userSql {
     @Autowired
     private UserMapper userMapper;
 
-    @PostMapping("add")
-    public void save(@RequestBody UserBean user) {
-        userMapper.insert(user);
+    @PostMapping(value = "add")
+    public String save(@RequestBody UserBean user) {
+//        userMapper.insert(user);
+        return "true";
     }
 
-    @PostMapping(value = "getUsers", consumes = "application/x-www-form-urlencoded")
+    @PostMapping("getUsers")
     public List<UserBean> getUsers() {
         List<UserBean> users = userMapper.getAll();
         return users;
