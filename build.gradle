@@ -34,17 +34,20 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 
-    //redis缓存
+    // redis缓存
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'org.apache.commons:commons-pool2'
     implementation "org.springframework.session:spring-session-data-redis:2.0.3.RELEASE"
-    //mysql
+    // mybatis
     implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.0"
+    // mysql
     implementation "mysql:mysql-connector-java"
+    //mongodb
+    implementation "org.springframework.boot:spring-boot-starter-data-mongodb"
 
-    //Gson
+    // Gson
     implementation 'com.google.code.gson:gson:2.8.6'
-    //MQ
+    // MQ
     implementation 'org.springframework.boot:spring-boot-starter-amqp'
     // schedule
     implementation 'org.springframework.boot:spring-boot-starter-test'
@@ -56,7 +59,14 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-devtools'
     // FastDFS
 //    implementation 'org.csource:fastdfs-client-java:1.29-SNAPSHOT'
-    compile fileTree(dir: 'libs', include: [ '*.jar'])
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // actuator 监控
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+//    // Spring Boot Admin 监控
+//    implementation 'de.codecentric:spring-boot-admin-starter-server:2.1.0'
+
+    // webflux
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
 }
 

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-public class SendMailBean {
+public class SendMailBean extends BaseBean{
 
     private String toAddr;
     private String subject;
