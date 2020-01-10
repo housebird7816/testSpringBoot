@@ -1,16 +1,15 @@
 package com.oakhit.test.queue;
 
-import com.oakhit.test.bean.configs.TopicRabbitConfig;
+import com.oakhit.test.bean.configs.FanoutRabbitConfig;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RabbitReceiver1 {
-
+public class FanoutReceiverB {
     @RabbitHandler
-    @RabbitListener(queues = TopicRabbitConfig.message)
+    @RabbitListener(queues = FanoutRabbitConfig.FANOUT_B)
     public void process(String content) {
-        System.out.println("Receiver1  : " + content);
+        System.out.println("ReceiverB  : " + content);
     }
 }
